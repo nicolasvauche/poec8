@@ -18,7 +18,15 @@
     </head>
     <body>
         <header>
-            Header
+            <nav>
+                <a href="/">Accueil</a>
+
+                {% if(not app.user) %}
+                    <a href="/connexion">Connexion</a>
+                {% else %}
+                    <a href="/deconnexion" onclick="return window.confirm('Confirmer la déconnexion ?')">Déconnexion</a>
+                {% endif %}
+            </nav>
         </header>
 
         <main>

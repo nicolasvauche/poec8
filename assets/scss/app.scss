@@ -4,5 +4,28 @@ html {
         text-align: center;
         color: white;
         background-color: #1a1a1a;
+
+        header {
+            padding: 0.5rem 1rem;
+
+            nav {
+                a {
+                    padding: 0.5rem;
+                    font-weight: bold;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: inherit;
+                }
+            }
+        }
+
+        main {
+            padding: 1.5rem 1rem;
+        }
+
+        footer {
+            padding: 0.5rem 1rem;
+            background-color: #333333;
+        }
     }
 }
