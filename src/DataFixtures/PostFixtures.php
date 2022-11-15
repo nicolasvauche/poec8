@@ -21,6 +21,10 @@ class PostFixtures extends Fixture implements OrderedFixtureInterface
         $tag->setName('Au début');
         $manager->persist($tag);
 
+        $tag2 = new Tag();
+        $tag2->setName('Et après');
+        $manager->persist($tag2);
+
         $post = new Post();
         $post->setTitle('Mon premier article')
             ->setCover('')
@@ -29,6 +33,27 @@ class PostFixtures extends Fixture implements OrderedFixtureInterface
             ->setCategory($category)
             ->addTag($tag)
             ->setUser($this->getReference('admin'));
+        $manager->persist($post);
+
+        $post = new Post();
+        $post->setTitle('Mon deuxième article')
+            ->setCover('')
+            ->setContent('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus blanditiis consectetur cupiditate doloremque dolores esse ex natus, quo sint tempora voluptatibus, voluptatum? Atque dolorem illum inventore maxime nulla. Optio, praesentium.')
+            ->setIsActive(false)
+            ->setCategory($category)
+            ->addTag($tag)
+            ->setUser($this->getReference('admin'));
+        $manager->persist($post);
+
+        $post = new Post();
+        $post->setTitle('Mon Troisième article')
+            ->setCover('')
+            ->setContent('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus blanditiis consectetur cupiditate doloremque dolores esse ex natus, quo sint tempora voluptatibus, voluptatum? Atque dolorem illum inventore maxime nulla. Optio, praesentium.')
+            ->setIsActive(true)
+            ->setCategory($category)
+            ->addTag($tag)
+            ->addTag($tag2)
+            ->setUser($this->getReference('user'));
         $manager->persist($post);
 
         $manager->flush();

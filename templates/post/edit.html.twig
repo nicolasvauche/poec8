@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% if(post) %}Modifier {{ post.title }}{% else %}Aucun article trouvé{% endif %}{% endblock %}
+
+{% block body %}
+    {% if(post) %}
+        <section>
+            <h1>Modifier {{ post.title }}</h1>
+        </section>
+    {% else %}
+        <section>
+            <h1>Aucun article trouvé</h1>
+        </section>
+    {% endif %}
+{% endblock %}

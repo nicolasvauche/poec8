@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% if(post) %}{{ post.title }}{% else %}Aucun article trouvé{% endif %}{% endblock %}
+
+{% block body %}
+    {% if(post) %}
+        <section>
+            <h1>{{ post.title }}</h1>
+
+            <h2>Catégorie : {{ post.category.name }}</h2>
+
+            <ul>
+                {% for tag in post.tags %}
+                    <li>{{ tag.name }}</li>
+                {% endfor %}
+            </ul>
+
+            <h3>Auteur : {{ post.user.email }}</h3>
+
+            <h4>Mis à jour le : {{ post.updatedAt | date('d/m/Y') }}</h4>
+
+            <p>{{ post.content }}</p>
+        </section>
+    {% else %}
+        <section>
+            <h1>Aucun article trouvé</h1>
+        </section>
+    {% endif %}
+{% endblock %}

@@ -19,12 +19,12 @@
     <body>
         <header>
             <nav>
-                <a href="/">Accueil</a>
+                <a href="{{ path('app_home') }}">Accueil</a>
 
                 {% if(not app.user) %}
-                    <a href="/connexion">Connexion</a>
+                    <a href="{{ path('app_login') }}">Connexion</a>
                 {% else %}
-                    <a href="/deconnexion" onclick="return window.confirm('Confirmer la déconnexion ?')">Déconnexion</a>
+                    <a href="{{ path('app_logout') }}" onclick="return window.confirm('Confirmer la déconnexion ?')">Déconnexion</a>
                 {% endif %}
             </nav>
         </header>

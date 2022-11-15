@@ -21,6 +21,66 @@ html {
 
         main {
             padding: 1.5rem 1rem;
+
+            section {
+                .app-grid {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-gap: 1rem;
+
+                    @media(min-width: 768px) {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+
+                    @media(min-width: 1025px) {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+
+                    .grid-item {
+                        padding: 0.5rem 0.25rem;
+                        background-color: #333333;
+                        border-radius: 0.25rem;
+
+                        a {
+                            display: block;
+                            text-decoration: none;
+                            color: inherit;
+
+                            &.app-btn {
+                                padding: 0.25rem 0.5rem;
+                                background-color: #5eb5e0;
+                            }
+                        }
+
+                        .item-title {
+                            margin: 0 0 1rem;
+                        }
+
+                        .item-category {
+                            margin: 0 0 1rem;
+                        }
+
+                        .item-tags {
+                            margin: 0 0 1rem;
+                            padding: 0;
+                            list-style: none;
+
+                            .item-tag {
+                                display: inline;
+                                padding: 0.25rem 0.5rem;
+                                color: #1a1a1a;
+                                background-color: #aaaaaa;
+                                border-radius: 1.5rem;
+                            }
+                        }
+
+                        .item-description {
+                            font-size: 0.9rem;
+                        }
+                    }
+
+                }
+            }
         }
 
         footer {

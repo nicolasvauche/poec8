@@ -26,6 +26,12 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
         $manager->persist($admin);
         $this->addReference('admin', $admin);
 
+        $user = new User();
+        $user->setEmail('user@user.com')
+            ->setPassword($this->hasher->hashPassword($user, 'user'));
+        $manager->persist($user);
+        $this->addReference('user', $user);
+
         $manager->flush();
     }
 
